@@ -65,7 +65,7 @@ jobs:
         run: |
           # Ensure strict host key checking is disabled if you haven't added the host to known_hosts.
           # For production, it's recommended to add the host to known_hosts beforehand.
-          # ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             # Navigate to your application directory on the EC2 instance.
             # Replace '/var/www/my-python-app' with the actual path to your application.
