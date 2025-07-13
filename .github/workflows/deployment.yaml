@@ -47,7 +47,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.EC2_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.EC2_ACCESS_KEY }}
-          aws-region: ap-south-1b # Replace with your AWS region (e.g., 'us-west-2', 'eu-central-1')
+          aws-region: ap-south-1 # Replace with your AWS region (e.g., 'us-west-2', 'eu-central-1')
 
       # Step 5: Set up SSH agent and add private key.
       # This is crucial for securely connecting to your EC2 instance via SSH.
