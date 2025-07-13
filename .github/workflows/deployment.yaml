@@ -45,17 +45,17 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.EC2_ACCESS_KEY }}
           aws-region: ap-south-1b # Replace with your AWS region (e.g., 'us-west-2', 'eu-central-1')
 
       # Step 5: Set up SSH agent and add private key.
       # This is crucial for securely connecting to your EC2 instance via SSH.
-      # The private key is stored as a GitHub Secret.
-      #- name: Set up SSH
-       # uses: webfactory/ssh-agent@v0.9.0
-        #with:
-         # ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+       #The private key is stored as a GitHub Secret.
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
 
       # Step 6: Deploy to EC2 instance.
       # This step connects to your EC2 instance via SSH and executes commands.
